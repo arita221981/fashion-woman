@@ -1,0 +1,159 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f3f4f6;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:50px;
+}
+
+/* FORMULARIO */
+
+.contenedor-form{
+    display:flex;
+    justify-content:center;
+    margin-bottom:40px;
+}
+
+form{
+
+    width:450px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+form input,
+form textarea{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#f9fafb;
+
+    font-size:16px;
+}
+
+form textarea{
+    height:100px;
+    resize:none;
+}
+
+form button{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ec4899;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+/* TABLA */
+
+.tabla-productos{
+
+    width:100%;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.encabezados{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 2fr 1fr 1fr;
+
+    background:#111827;
+
+    color:white;
+
+    padding:20px;
+
+    font-weight:bold;
+}
+
+.fila{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 2fr 1fr 1fr;
+
+    padding:20px;
+
+    align-items:center;
+
+    border-bottom:
+    1px solid #e5e7eb;
+}
+
+.fila:hover{
+    background:#f9fafb;
+}
+
+/* BOTONES */
+
+.acciones{
+    display:flex;
+    gap:10px;
+}
+
+.editar,
+.eliminar{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:10px 15px;
+
+    border-radius:8px;
+
+    font-size:14px;
+}
+
+.editar{
+    background:#3b82f6;
+}
+
+.eliminar{
+    background:#ef4444;
+}

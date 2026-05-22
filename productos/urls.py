@@ -1,0 +1,17 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+
+    path('', views.inicio),
+
+    path(
+        'editar/<int:id>/',
+        views.editar_producto
+    ),
+
+    path(
+        'eliminar/<int:id>/',
+        views.eliminar_producto
+    ),
+]

@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Fashion Woman</title>
+
+    <link rel="stylesheet"
+    href="{% static 'estilos.css' %}">
+
+</head>
+
+<body>
+
+<h1>Fashion Woman</h1>
+
+<div class="contenedor-form">
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre producto"
+            value="{{ editar.nombre|default:'' }}">
+
+        <textarea
+            name="descripcion"
+            placeholder="Descripción">{{ editar.descripcion|default:'' }}</textarea>
+
+        <input
+            type="number"
+            step="0.01"
+            name="precio"
+            placeholder="Precio"
+            value="{{ editar.precio|default:'' }}">
+
+        {% if editar %}
+
+            <button type="submit">
+                Actualizar Producto
+            </button>
+
+        {% else %}
+
+            <button type="submit">
+                Agregar Producto
+            </button>
+
+        {% endif %}
+
+    </form>
+
+</div>
+
+<div class="tabla-productos">
+
+    <div class="encabezados">
+
+        <div>Nombre</div>
+        <div>Descripción</div>
+        <div>Precio</div>
+        <div>Acciones</div>
+
+    </div>
+
+    {% for producto in productos %}
+
+    <div class="fila">
+
+        <div>
+            {{ producto.nombre }}
+        </div>
+
+        <div>
+            {{ producto.descripcion }}
+        </div>
+
+        <div>
+            $ {{ producto.precio }}
+        </div>
+
+        <div class="acciones">
+
+            <a href="/editar/{{ producto.id }}"
+            class="editar">
+
+                Editar
+
+            </a>
+
+            <a href="/eliminar/{{ producto.id }}"
+            class="eliminar">
+
+                Eliminar
+
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+
+</html>
