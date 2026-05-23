@@ -104,10 +104,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = BASE_DIR / 'media'
-CSRF_TRUSTED_ORIGINS = ['https://fashion-woman-production.up.railway.app']
+
+# CONFIGURACIÓN PARA PRODUCCIÓN (RAILWAY)
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 CSRF_TRUSTED_ORIGINS = ['https://fashion-woman-production.up.railway.app']
